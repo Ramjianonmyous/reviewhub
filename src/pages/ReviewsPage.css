@@ -1,0 +1,75 @@
+.reviews-page {
+  /* Removed the padding-top: var(--nav-h) so the dark background hits the top of the screen */
+  min-height: 100vh;
+  background: var(--off-white);
+}
+
+.reviews-page__hero {
+  background: var(--dark);
+  /* Added the navbar height to the top padding so content isn't hidden behind the nav */
+  padding: calc(var(--nav-h) + 60px) 40px 60px;
+  text-align: center;
+}
+
+.reviews-page__title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.reviews-page__sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+}
+
+.reviews-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 40px 0 32px;
+}
+
+.filter-pill {
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: var(--white);
+  color: #555;
+  border: 2px solid #e0e0e8;
+  transition: all 0.2s;
+}
+.filter-pill:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+.filter-pill--active {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+
+.reviews-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 80px;
+}
+
+.reviews-page__empty {
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+  padding: 60px 0;
+}
+
+@media (max-width: 900px) {
+  .reviews-page__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .reviews-page__grid { grid-template-columns: 1fr; }
+}

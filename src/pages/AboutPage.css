@@ -1,0 +1,23 @@
+.about-page {
+  min-height: 100vh;
+  background: var(--off-white);
+}
+
+.about-page__hero {
+  background: var(--dark);
+  padding: calc(var(--nav-h) + 60px) 40px 60px;
+  text-align: center;
+}
+
+.about-page__title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.about-page__sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+}

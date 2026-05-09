@@ -1,0 +1,114 @@
+.newsletter {
+  position: relative;
+  background: var(--dark);
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.newsletter__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+}
+
+.newsletter__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%,
+    rgba(10,10,14,0.4) 0%,
+    rgba(10,10,14,0.95) 100%
+  );
+}
+
+.newsletter__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.newsletter__title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 38px);
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.newsletter__sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  max-width: 440px;
+}
+
+.newsletter__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.newsletter__socials {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newsletter__social-btn {
+  width: 56px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--red);
+  border-radius: 14px;
+  color: var(--white);
+  background: rgba(255,255,255,0.04);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  animation: pulse-border 3s ease-in-out infinite;
+}
+.newsletter__social-btn:nth-child(2) { animation-delay: 0.4s; }
+.newsletter__social-btn:nth-child(3) { animation-delay: 0.8s; }
+.newsletter__social-btn:nth-child(4) { animation-delay: 1.2s; }
+
+.newsletter__social-btn:hover {
+  background: var(--red);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--red-glow);
+  animation: none;
+}
+
+.newsletter__social-btn svg {
+  width: 22px; height: 22px;
+}
+
+.newsletter__subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  padding: 0 32px;
+  height: 56px; /* Matched to social button height */
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.newsletter__subscribe:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--red-glow);
+}
+.newsletter__subscribe svg {
+  width: 22px; height: 22px; /* Matched to social icon size */
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .newsletter__inner { grid-template-columns: 1fr; gap: 36px; }
+}

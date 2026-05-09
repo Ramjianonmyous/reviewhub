@@ -1,0 +1,24 @@
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: var(--star-size, 16px);
+  line-height: 1;
+  color: #ddd;
+}
+
+.star--full { color: var(--star); }
+.star--half {
+  position: relative;
+  color: #ddd;
+}
+.star--half::before {
+  content: '★';
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--star);
+  width: 50%;
+  overflow: hidden;
+}
